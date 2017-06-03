@@ -17,7 +17,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,19 +37,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
-    private void agregarMarcador(double lat, double lng)
-    {
-        LatLng coordenadas= new LatLng(lat,lng);
-        Object cameraUpdate;
-        CameraUpdate ubicacion= CameraUpdateFactory.newLatLngZoom(coordenadas,16);
-        if (marcador!=null)
-        {
-            marcador.remove();
-        }
-        marcador=mMap.addMarker(newMarkerOptions()
-        .position(coordenadas)
-        .title("MI posicion actual")
-        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
-        mMap.animateCamera(ubicacion);
-    }
+
 }
