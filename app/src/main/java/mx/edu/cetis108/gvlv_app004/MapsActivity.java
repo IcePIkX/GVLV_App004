@@ -25,7 +25,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private Marker marcador;
+    private Marker Marcador;
     double lat = 0.0;
     double lng = 0.0;
 
@@ -53,9 +53,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private void agregarMarcador(double lat, double lng) {
         LatLng coordenadas = new LatLng(lat, lng);
         CameraUpdate ubicacion = CameraUpdateFactory.newLatLngZoom(coordenadas, 16);
-        if (marcador != null) marcador.remove();
+        if (Marcador != null) Marcador.remove();
 
-        marcador = mMap.addMarker(new MarkerOptions()
+        Marcador = mMap.addMarker(new MarkerOptions()
                 .position(coordenadas)
                 .title("Posicion Actual")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
